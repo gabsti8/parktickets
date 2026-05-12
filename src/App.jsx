@@ -54,6 +54,7 @@ const DICTIONARY = {
     send: 'Enviar',
     cancel: 'Cancelar',
     printingMsg: 'Imprimiendo entradas... ¡Recógelas abajo!',
+    printingReceiptMsg: 'Imprimiendo justificante...',
     emailSentMsg: 'Entradas enviadas con éxito',
     invalidEmail: 'Por favor, introduce un email válido',
     terminalInstructions: 'Sigue las instrucciones del terminal de pago',
@@ -157,6 +158,7 @@ const DICTIONARY = {
     send: 'Send',
     cancel: 'Cancel',
     printingMsg: 'Printing tickets... Collect them below!',
+    printingReceiptMsg: 'Printing receipt...',
     emailSentMsg: 'Tickets successfully sent',
     invalidEmail: 'Please enter a valid email address',
     terminalInstructions: 'Follow the instructions on the payment terminal',
@@ -209,6 +211,7 @@ const DICTIONARY = {
     send: 'Envoyer',
     cancel: 'Annuler',
     printingMsg: 'Impression en cours... Récupérez-les en bas !',
+    printingReceiptMsg: 'Impression du reçu en cours...',
     emailSentMsg: 'Billets envoyés avec succès',
     invalidEmail: 'Veuillez entrer une adresse email valide',
     terminalInstructions: 'Suivez les instructions sur le terminal de paiement',
@@ -261,6 +264,7 @@ const DICTIONARY = {
     send: 'Senden',
     cancel: 'Abbrechen',
     printingMsg: 'Tickets werden gedruckt... Bitte unten entnehmen!',
+    printingReceiptMsg: 'Beleg wird gedruckt...',
     emailSentMsg: 'Tickets erfolgreich gesendet',
     invalidEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
     terminalInstructions: 'Folgen Sie den Anweisungen auf dem Zahlungsterminal',
@@ -441,7 +445,7 @@ export default function App() {
   };
 
   const handlePrint = () => {
-    addToast(t.printingMsg, 'info');
+    addToast(paymentMethod === 'counter' ? (t.printingReceiptMsg || 'Imprimiendo justificante...') : t.printingMsg, 'info');
   };
 
   const handleSendEmail = (e) => {
@@ -604,7 +608,7 @@ export default function App() {
 
               {/* BARRA FLOTANTE DEL CARRITO */}
               {cartItemCount > 0 && (
-                <div className="absolute bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] p-4 pb-6 md:p-8 lg:p-10 px-4 md:px-8 lg:px-12 flex justify-between items-center z-20 animate-in slide-in-from-bottom-full duration-300">
+                <div className="fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] p-4 pb-6 md:p-8 lg:p-10 px-4 md:px-8 lg:px-12 flex justify-between items-center z-20 animate-in slide-in-from-bottom-full duration-300">
                   <div className="flex items-center gap-3 lg:gap-10 relative">
                     <div className="relative bg-indigo-100 text-indigo-700 w-12 h-12 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-full flex items-center justify-center shadow-inner shrink-0">
                       <Ticket className="w-6 h-6 md:w-10 md:h-10 lg:w-14 lg:h-14" />
@@ -970,7 +974,7 @@ export default function App() {
               className={`flex items-center justify-center gap-3 md:gap-6 p-4 md:p-6 lg:p-8 rounded-full shadow-xl md:shadow-2xl shadow-black/20 text-sm md:text-xl lg:text-3xl font-bold animate-in slide-in-from-bottom-5 fade-in duration-300 w-full ${
                 toast.type === 'error' ? 'bg-rose-500 text-white' :
                 toast.type === 'info' ? 'bg-blue-600 text-white' :
-                'bg-slate-800 text-white'
+                'bg-emerald-500 text-white'
               }`}
             >
               {toast.type === 'error' ? <AlertCircle className="w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 shrink-0" /> : <CheckCircle2 className="w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 text-emerald-400 shrink-0" />}

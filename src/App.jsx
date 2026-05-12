@@ -482,14 +482,14 @@ export default function App() {
             </p>
           </div>
 
-          <div className="absolute bottom-8 md:bottom-24 w-full px-4 md:px-16" onClick={(e) => e.stopPropagation()}>
+          <div className="absolute bottom-8 md:bottom-24 w-full px-4 md:px-16 lg:px-10 xl:px-16" onClick={(e) => e.stopPropagation()}>
             <p className="text-white/80 text-center text-lg md:text-4xl mb-4 md:mb-12 font-medium">{t.selectLanguage}</p>
-            <div className="flex justify-center gap-3 md:gap-10 flex-wrap">
+            <div className="flex justify-center gap-3 md:gap-10 lg:gap-8 xl:gap-10 flex-wrap">
               {LANGUAGES.map(l => (
                 <button
                   key={l.code}
                   onClick={() => { setLang(l.code); setStep('catalog'); }}
-                  className="rounded-full w-14 h-14 md:w-24 md:h-24 lg:w-40 lg:h-40 overflow-hidden shadow-lg border-[3px] lg:border-[6px] border-white/20 hover:border-white/50 active:scale-95 transition-all flex items-center justify-center shrink-0"
+                  className="rounded-full w-14 h-14 md:w-24 md:h-24 lg:w-36 lg:h-36 xl:w-40 xl:h-40 overflow-hidden shadow-lg border-[3px] lg:border-[5px] xl:border-[6px] border-white/20 hover:border-white/50 active:scale-95 transition-all flex items-center justify-center shrink-0"
                 >
                   <img src={l.flagUrl} alt={l.name} className="w-full h-full object-cover" />
                 </button>

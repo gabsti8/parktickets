@@ -226,10 +226,10 @@ export default function App() {
       <div
         className="bg-slate-50 flex flex-col overflow-hidden select-none text-slate-800 shadow-2xl relative shrink-0"
         style={{
-          width: 'min(100vw, calc(100vh * 1080 / 1920))',
-          height: 'min(100vh, calc(100vw * 1920 / 1080))',
-          maxWidth: '1080px',
-          maxHeight: '1920px',
+          width: '1080px',
+          height: '1920px',
+          transform: 'scale(calc(min(100vw / 1080, 100vh / 1920)))',
+          transformOrigin: 'center center'
         }}
       >
         {renderAppContent()}

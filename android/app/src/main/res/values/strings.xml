@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ParkTickets</string>
+    <string name="title_activity_main">ParkTickets</string>
+    <string name="package_name">com.tuempresa.parktickets</string>
+    <string name="custom_url_scheme">com.tuempresa.parktickets</string>
+</resources>

@@ -1,0 +1,14 @@
+{
+  "appId": "com.tuempresa.parktickets",
+  "appName": "ParkTickets",
+  "webDir": "dist",
+  "android": {
+    "initialFocus": true,
+    "allowMixedContent": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true
+    }
+  }
+}
